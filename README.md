@@ -6,7 +6,7 @@ Yongda group is famous for its complete  industry chain of car sales  service . 
 PrinceTechs  plans to develop an integrated business management & application system which  can provide a  one-stop service to solve all above problems. The system primarily involves three models: **_Potential Value Model, User Attrition Early  Warning  Model, User Portrait Model_**. My **_role_** in this project is as follows:
   - Building User Portrait Model
   - Optimizing Potential Value Model 
-  - Doing some business analysis
+  - Doing Business Analysis
 
 ## Building User Portrait Model
 The data of the audi brand between 2013 and 2016 in Yongda's database is relatively complete. I used this data to figure out what features were appropriate for generating the user portrait. The final features mainly consist of three kinds of information: _customer basic personal info, customer info of buying new cars in Yongda, customer maintenance consumption behavior_. The code of generating those features is in the file `user_profile_features_final.py` in the folder UserPortraitModel. The core algorithm I used to do the clustering of user features was **_KMeans_**. I also did one brief sample analysis of the radar graphs generated from user portrait features which contained the characteristics of each user group and corresponding marketing measures towards each user group. This analysis can be found in the file `user_profile_radar_graph_sample_analysis.pptx` and its original data of these radar graphs are saved in the folder RadarGraphData.
