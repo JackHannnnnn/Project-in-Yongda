@@ -28,4 +28,4 @@ The performance of the model has been improved from a MSE(Mean Squared Error) of
 I trained the model using Linear Regression like Lasso & Ridge Regression, Polynomial Regression, Random Forest, Gradient Boosting Tree. I used Grid Search  & Cross Validation to tune the parameters primarily. The details of the model training are included in the file `PotentialValueModelTraining.ipynb`.
 
 ## Doing Business Analysis
-
+Sometimes I helped Program Manager and Business Analyst do certain business analysis. I list two samples in the folder BusinessAnalysis which includes two files `data_distribution_analysis.py` and `holiday_analysis.py`.
