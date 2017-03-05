@@ -156,52 +156,6 @@ d_2014 = datetime.datetime(2014, 7, 1)
 d_2013 = datetime.datetime(2013, 7, 1)
 
 
-#==============================================================================
-# ##Test data distribution
-# voucher_test = voucher[(voucher['IssueDate'] < d_2016) & (voucher['IssueDate'] >= d_2013)]
-# maintain_test = maintain[(maintain['IssueDate'] < d_2016) & (maintain['IssueDate'] >= d_2013)]
-# 
-# all_repair_test = maintain_test[maintain_test['MaintainTypeCode'].isin(
-#     ['WO0000001', 'WO0000002', 'WO0000011', 'WO0000012',
-#      'WO0000015', 'WO0000018', 'WO0000019', 'WO0000021', 'WO0000032', 'WO0000038',   
-#      'WO0000006', 'WO0000026', 'WO0000029', 'WO0000039'])]  
-# all_repair_test.shape
-# all_repair_test['TotalAccountRecieveAmount'].hist(bins=30)
-# 
-# 
-# all_repair_test[all_repair_test['TotalAccountRecieveAmount'] == 0].shape
-# all_repair_test[all_repair_test['TotalAccountRecieveAmount'] == 0]['MaintainTypeCode'].value_counts()
-# 
-# all_repair_test[all_repair_test['TotalAccountRecieveAmount'] > 40000].shape
-# all_repair_test[all_repair_test['TotalAccountRecieveAmount'] > 40000]['MaintainTypeCode'].value_counts()
-# 
-# 
-# all_repair_test['MaintainTypeCode'].value_counts()
-# all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000029']['TotalAccountRecieveAmount'].hist(bins=30)
-# (all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000029']['TotalAccountRecieveAmount'] > 60000).sum()
-# 
-# 
-# all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000032']['TotalAccountRecieveAmount'].hist(bins=100)
-# (all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000032']['TotalAccountRecieveAmount'] > 25000).sum()
-# 
-# 
-# all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000026']['TotalAccountRecieveAmount'].hist(bins=30)
-# (all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000026']['TotalAccountRecieveAmount'] > 70000).sum()
-# 
-# all_repair_test[all_repair_test['MaintainTypeCode'] == u'WO0000001']['TotalAccountRecieveAmount'].hist(bins=30)
-
-
-# maintain_test = maintain[(maintain['IssueDate'] < d_2016) & (maintain['IssueDate'] >= d_2013)]
-# maintain_test['MaintainTypeCode'].value_counts()
-# normal_maintain_test = maintain_test[maintain_test['MaintainTypeCode'].isin(
-#     ['WO0000003', 'WO0000004', 'WO0000017', 'WO0000022', 'WO0000028', 'WO0000040'])]
-# normal_maintain_test['TotalAccountRecieveAmount'].hist(bins=300)
-# normal_maintain_test['MaintainTypeCode'].value_counts()
-# 
-# normal_maintain_test[normal_maintain_test['TotalAccountRecieveAmount'] == 0]['MaintainTypeCode'].value_counts()
-#==============================================================================
-
-
 #Calculating y
 voucher_16 = voucher[(voucher['IssueDate'] < d_2016) & (voucher['IssueDate'] >= d_2015)]
 maintain_16 = maintain[(maintain['IssueDate'] < d_2016) & (maintain['IssueDate'] >= d_2015)]
@@ -255,14 +209,6 @@ chassis_gender = pd.get_dummies(chassis_profile['Gender'])
 chassis_profile = pd.merge(chassis_profile, chassis_gender, left_index=True, right_index=True)
 del chassis_profile['Gender']
 
-#==============================================================================
-# chassis_profile['Birthday'] = chassis_profile['Birthday'].map(lambda x: x.month)
-# chassis_profile['Birthday'].fillna('UnknownBirth', inplace=True)
-# chassis_birth = pd.get_dummies(chassis_profile['Birthday'], prefix='Birth')
-# chassis_profile = pd.merge(chassis_profile, chassis_birth, left_index=True, right_index=True)
-# chassis_profile = chassis_profile.rename(columns={'Birth_UnknownBirth': 'UnknownBirth'})
-# del chassis_profile['Birthday']
-#==============================================================================
 
 chassis_attribute = pd.get_dummies(chassis_profile['AttributeCode'], prefix='CustomerType')
 chassis_profile = pd.merge(chassis_profile, chassis_attribute, left_index=True, right_index=True)
